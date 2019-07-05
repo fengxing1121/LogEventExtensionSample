@@ -1,0 +1,11 @@
+C:\dev\LogEventExtension\LogEventExtensionSample\bin\Debug\LogEventExtensionSample.dll
+C:\dev\LogEventExtension\LogEventExtensionSample\bin\Debug\LogEventExtensionSample.pdb
+C:\dev\LogEventExtension\LogEventExtensionSample\bin\Debug\TcHmiSrvExtNet.dll
+C:\dev\LogEventExtension\LogEventExtensionSample\bin\Debug\TcHmiSrvExtNet.DynamicSymbols.dll
+C:\dev\LogEventExtension\LogEventExtensionSample\bin\Debug\TcHmiSrvExtNet.Management.dll
+C:\dev\LogEventExtension\LogEventExtensionSample\bin\Debug\TcHmiSrvExtNet.Versioning.dll
+C:\dev\LogEventExtension\LogEventExtensionSample\bin\Debug\System.Synchronization.dll
+C:\dev\LogEventExtension\LogEventExtensionSample\bin\Debug\TcHmiSrvExtNet.xml
+C:\dev\LogEventExtension\LogEventExtensionSample\obj\Debug\LogEventExtensionSample.dll
+C:\dev\LogEventExtension\LogEventExtensionSample\obj\Debug\LogEventExtensionSample.pdb
+C:\dev\LogEventExtension\LogEventExtensionSample\obj\Debug\LogEventExtensionSample.csprojResolveAssemblyReference.cache

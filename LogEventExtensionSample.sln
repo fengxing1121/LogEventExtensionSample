@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogEventExtensionSample", "LogEventExtensionSample\LogEventExtensionSample.csproj", "{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}"
+EndProject
+Project("{FE7A1B72-C5B7-4D7C-BB7D-76384D4DE8E1}") = "LogEventExtensionTest", "LogEventExtensionTest\LogEventExtensionTest.hmiproj", "{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|TwinCAT HMI = Debug|TwinCAT HMI
+		Release|Any CPU = Release|Any CPU
+		Release|TwinCAT HMI = Release|TwinCAT HMI
+		RelWithDebInfo|Any CPU = RelWithDebInfo|Any CPU
+		RelWithDebInfo|TwinCAT HMI = RelWithDebInfo|TwinCAT HMI
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.Debug|TwinCAT HMI.ActiveCfg = Debug|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.Debug|TwinCAT HMI.Build.0 = Debug|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.Release|TwinCAT HMI.ActiveCfg = Release|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.Release|TwinCAT HMI.Build.0 = Release|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.RelWithDebInfo|Any CPU.ActiveCfg = RelWithDebInfo|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.RelWithDebInfo|Any CPU.Build.0 = RelWithDebInfo|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.RelWithDebInfo|TwinCAT HMI.ActiveCfg = RelWithDebInfo|Any CPU
+		{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}.RelWithDebInfo|TwinCAT HMI.Build.0 = RelWithDebInfo|Any CPU
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.Debug|Any CPU.ActiveCfg = Debug|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.Debug|Any CPU.Build.0 = Debug|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.Debug|TwinCAT HMI.ActiveCfg = Debug|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.Debug|TwinCAT HMI.Build.0 = Debug|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.Release|Any CPU.ActiveCfg = Release|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.Release|TwinCAT HMI.ActiveCfg = Release|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.Release|TwinCAT HMI.Build.0 = Release|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.RelWithDebInfo|Any CPU.ActiveCfg = Release|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.RelWithDebInfo|Any CPU.Build.0 = Release|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.RelWithDebInfo|TwinCAT HMI.ActiveCfg = Release|TwinCAT HMI
+		{E0037B1D-82CB-4732-B7AF-E5EFF7E85F46}.RelWithDebInfo|TwinCAT HMI.Build.0 = Release|TwinCAT HMI
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14AA69D1-C0BB-4B76-BF30-22A1CBF02FEC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <OldToolsVersion>12.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Label="TwinCatHMI">
+    <TcHmiExtensionTypes>{5DF3DCF0-60A1-4102-985E-1810812D0E69}</TcHmiExtensionTypes>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TcHmiDirectory>$(registry:HKEY_LOCAL_MACHINE\Software\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <TcHmiDirectory Condition="'$(TcHmiDirectory)'==''">$(registry:HKEY_LOCAL_MACHINE\Software\Wow6432Node\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <TwinCATHmi_Tasks>$(TcHmiDirectory)\MSBuild\Beckhoff.TwinCAT.HMI.tasks</TwinCATHmi_Tasks>
+    <TwinCATHmi_Targets>$(TcHmiDirectory)\MSBuild\Beckhoff.TwinCAT.HMI.targets</TwinCATHmi_Targets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectGuid>{18A05103-D9CA-46A7-B405-3D5C3C82EC8D}</ProjectGuid>
+    <ProjectName>EventExtensionSample</ProjectName>
+    <TcHmiInstallationDir>$(TcHmiDirectory)\</TcHmiInstallationDir>
+    <TcHmiServerVersion>Latest</TcHmiServerVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LogEventExtensionSample</RootNamespace>
+    <AssemblyName>LogEventExtensionSample</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RelWithDebInfo|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\RelWithDebInfo\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(TwinCATHmi_Tasks)" />
+  <Import Project="$(TwinCATHmi_Targets)" />
+  <PropertyGroup>
+    <PostBuildEventDependsOn></PostBuildEventDependsOn>
+  </PropertyGroup>
+  <Target Name="PostBuildEvent" Condition="'$(PostBuildEvent)' != '' and ('$(RunPostBuildEvent)'=='Always' or '$(RunPostBuildEvent)'=='OnOutputUpdated')" DependsOnTargets="$(PostBuildEventDependsOn)">
+    <Exec WorkingDirectory="$(OutDir)" Command="$(PostBuildEvent)" />
+    <TcHmiMSBuildPkgMgt.TcHmiBuild TaskAction="Pack" OutputPath="$(TargetDir)" ProjectName="$(ProjectName)" ProjectGuid="$(ProjectGuid)"></TcHmiMSBuildPkgMgt.TcHmiBuild>
+  </Target>
+  <PropertyGroup Label="TwinCatHMI">
+    <TcHmiTargetFramework>$(TargetFrameworkVersion)</TcHmiTargetFramework>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '12.0' Or '$(VisualStudioVersion)' == '14.0'">
+      <ItemGroup>
+        <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcHmiSrvExtNet, Culture=neutral, PublicKeyToken=180016cd49e5e8c3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TcHmiInstallationDir)Infrastructure\TcHmiServer\$(TcHmiServerVersion)\Win32\TcHmiSrvExtNet.dll</HintPath>
+    </Reference>
+    <Reference Include="TcHmiSrvExtNet.DynamicSymbols, Culture=neutral, PublicKeyToken=180016cd49e5e8c3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TcHmiInstallationDir)Infrastructure\TcHmiServer\$(TcHmiServerVersion)\Win32\TcHmiSrvExtNet.DynamicSymbols.dll</HintPath>
+    </Reference>
+    <Reference Include="TcHmiSrvExtNet.Management, Culture=neutral, PublicKeyToken=180016cd49e5e8c3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(TcHmiInstallationDir)Infrastructure\TcHmiServer\$(TcHmiServerVersion)\Win32\TcHmiSrvExtNet.Management.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Manifest.json" />
+    <Compile Include="LogEventExtensionSample.cs" />
+    <Compile Include="ExtensionErrorValue.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\LogEventExtensionSample.Config.json" />
+    <None Include="config\LogEventExtensionSample.Language.en.json" />
+    <None Include="config\LogEventExtensionSample.Schema.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+      IF NOT EXIST "$(TargetDir)" ( mkdir "$(TargetDir)" )
+      xcopy /y /r "$(ProjectDir)config\*.json" "$(TargetDir)"
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="BeforeBuild">
+    <TcHmiMSBuild.Extensions.TcHmiBuild TaskAction="UpdateConfigVersion" ProjectDirectory="$(ProjectDir)" />
+  </Target>
+  <Target Name="AfterBuild">
+    <TcHmiMSBuild.Extensions.TcHmiBuild TaskAction="SetDotNetTargetFrameworkVersion" DotNetTargetFrameworkVersion="$(TcHmiTargetFramework)" ProjectDirectory="$(ProjectDir)" OutputPath="$(TargetDir)" />
+    <!--
+    <TcHmiMSBuild.Extensions.TcHmiBuild TaskAction="AddKeyValue" Key="dotNetPlatformTarget" Value="$(TargetFrameworkVersion)" ProjectDirectory="$(ProjectDir)" OutputPath="$(TargetDir)"/>
+    -->
+    <TcHmiMSBuildPkgMgt.TcHmiBuild TaskAction="Pack" OutputPath="$(TargetDir)" ProjectName="$(ProjectName)" ProjectGuid="$(ProjectGuid)" ProjectDirectory="$(ProjectDir)" ProjectType="2" />
+  </Target>
+  <Target Name="AfterClean" AfterTargets="Clean">
+    <RemoveDir Directories="$(TargetDir)" />
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)$(Configuration)" />
+  </Target>
+</Project>

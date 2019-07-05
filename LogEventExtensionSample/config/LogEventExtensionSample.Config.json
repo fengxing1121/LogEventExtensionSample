@@ -1,0 +1,20 @@
+﻿{
+  "$schema": "ExtensionSettings.Schema.json",
+  "guid": "18a05103-d9ca-46a7-b405-3d5c3c82ec8d",
+  "version": "1.0.0.0",
+  "configVersion": "1.0.0.51",
+  "symbols": {
+    "LogParameterChangeEvent": {
+      "readValue": {
+        "function": true
+      },
+      "hidden": false
+    },
+    "LogEvent": {
+      "readValue": {
+        "function": true
+      },
+      "hidden": false
+    }
+  }
+}

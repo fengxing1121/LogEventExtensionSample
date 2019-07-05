@@ -1,0 +1,66 @@
+﻿{
+  "metadata": {
+    "industrialField": "",
+    "packageType": "ServerExtPrj",
+    "id": "LogEventExtensionSample",
+    "version": "1.0.0.0",
+    "guid": "18a05103-d9ca-46a7-b405-3d5c3c82ec8d",
+    "configurationName": "",
+    "platformName": "",
+    "creationTime": 1562334321,
+    "authors": "",
+    "owners": "",
+    "summary": "",
+    "licenseUrl": "",
+    "projectUrl": "",
+    "iconUrl": "",
+    "requireLicenseAcceptance": false,
+    "description": "",
+    "releaseNotes": "",
+    "copyright": "",
+    "tags": "",
+    "dependencies": [],
+    "references": []
+  },
+  "files": [
+    {
+      "target": "ExtensionSettings.Schema.json"
+    },
+    {
+      "target": "Language.Schema.json"
+    },
+    {
+      "target": "LogEventExtensionSample.Config.json"
+    },
+    {
+      "target": "LogEventExtensionSample.dll"
+    },
+    {
+      "target": "LogEventExtensionSample.Language.en.json"
+    },
+    {
+      "target": "LogEventExtensionSample.Schema.json"
+    },
+    {
+      "target": "System.Synchronization.dll"
+    },
+    {
+      "target": "TcHmiSrvExtNet.dll"
+    },
+    {
+      "target": "TcHmiSrvExtNet.DynamicSymbols.dll"
+    },
+    {
+      "target": "TcHmiSrvExtNet.Management.dll"
+    },
+    {
+      "target": "TcHmiSrvExtNet.Versioning.dll"
+    },
+    {
+      "target": "TcHmiSrvExtNet.xml"
+    }
+  ],
+  "symbols": [],
+  "flags": {},
+  "fileformat": 1
+}

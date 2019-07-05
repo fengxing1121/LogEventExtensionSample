@@ -1,0 +1,36 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "LogEventDetails": {
+      "properties": {
+        "user": {
+          "$ref": "tchmi:general#/definitions/String"
+        },
+        "details": {
+          "$ref": "tchmi:general#/definitions/String"
+        }
+      },
+      "type": "object"
+    },
+    "LogParameterChangeDetails": {
+      "properties": {
+        "changedFrom": {
+          "$ref": "tchmi:general#/definitions/String"
+        },
+        "changedTo": {
+          "$ref": "tchmi:general#/definitions/String"
+        },
+        "comment": {
+          "$ref": "tchmi:general#/definitions/String"
+        },
+        "symbol": {
+          "$ref": "tchmi:general#/definitions/String"
+        },
+        "user": {
+          "$ref": "tchmi:general#/definitions/String"
+        }
+      },
+      "type": "object"
+    }
+  }
+}
